@@ -25,7 +25,6 @@ public class AddDigit {
 		while(num/10!=0){
 			num = addNum(num);
 		}
-		int x = Integer.MAX_VALUE
 		return num;
 	}
 

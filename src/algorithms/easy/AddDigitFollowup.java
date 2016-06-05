@@ -10,7 +10,7 @@ public class AddDigitFollowup {
 		if(num<9){
 			return num;
 		}else{
-			return (num-1)%9+1;
+			return 1+(num-1)%9;
 		}
 		
 	}
