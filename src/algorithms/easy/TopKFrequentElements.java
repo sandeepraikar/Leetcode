@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.PriorityQueue;
 import java.util.Set;
 
 public class TopKFrequentElements {
@@ -19,14 +20,20 @@ public class TopKFrequentElements {
 	public static List<Integer> topKFrequent(int[] nums, int k) {
         List<Integer> result = new ArrayList<>();
 		Map<Integer,Integer> mapper = new HashMap<>();
-		for(int x: nums){
+		/*for(int x: nums){
 			Integer val = mapper.get(x);
 			if(val==null){
 				val = Integer.valueOf(1);
 			}else{
 				val = val +1;
 			}
-			mapper.put(x, val);
+			mapper.put(x, val);			
+		}
+		*/
+		
+		//Java8
+		for(int x: nums){
+			mapper.put(x,mapper.getOrDefault(x, 0)+1);
 		}
 		
 		Comparator<Map.Entry<Integer, Integer>> compr = new Comparator<Map.Entry<Integer,Integer>>() {
