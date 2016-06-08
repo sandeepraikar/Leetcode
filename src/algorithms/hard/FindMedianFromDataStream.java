@@ -1,4 +1,4 @@
-package algortihms.hard;
+package algorithms.hard;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
