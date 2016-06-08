@@ -1,4 +1,4 @@
-package algorithm.medium;
+package algorithms.medium;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
