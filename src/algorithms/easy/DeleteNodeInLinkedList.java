@@ -29,7 +29,5 @@ public class DeleteNodeInLinkedList {
 			node.val = node.next.val;
 			node.next = node.next.next;
 		}
-		List<Integer> asd = new ArrayList<>();
-		asd.clear();
 	}
 }
