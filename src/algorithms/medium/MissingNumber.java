@@ -1,4 +1,4 @@
-package algorithms.easy;
+package algorithms.medium;
 
 /*
  * Missing Number
@@ -40,11 +40,11 @@ public class MissingNumber {
 	
 	//Using sum
     public static int missingNumber(int[] nums){
-    	int total=0;
-    	for(int i=1;i<nums.length;i++){
-    		total=total+i-nums[i-1];
+    	int sum=0;
+    	for(int i=0;i<nums.length;i++){
+    		sum+=nums[i]-i;
     	}
-    	return total;
+    	return nums.length-sum;
     }
 	
 	public static void main(String args[]){
