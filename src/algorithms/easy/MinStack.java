@@ -5,30 +5,30 @@ import java.util.Stack;
 class MyStack {
 
 	/** initialize your data structure here. */
-	Stack<Integer> stack = new Stack<>();
-	int minValue;
+	Stack<Integer> stack; 
+	Stack<Integer> stack2; 
 
 	public MyStack() {
-		minValue = Integer.MAX_VALUE;
+		stack= new Stack<>();
+		stack2= new Stack<>();
 	}
 
 	public void push(int x) {
-		if (x < minValue) {
-			minValue = x;
+		if(x<getMin()){
+			stack2.push(x);
+			stack.push(x);
+		}else{
+			stack.push(x);
 		}
-		stack.push(x);
 	}
 
 	public void pop() {
-		stack.pop();
-		int newMin = Integer.MAX_VALUE;
-		for (int i = 0; i < stack.size(); i++) {
-			int element = stack.get(i);
-			if (element < newMin) {
-				newMin = stack.get(i);
-			}
+		if(stack.peek()==stack2.peek()){
+			stack.pop();
+			stack2.pop();
+		}else{
+			stack.pop();
 		}
-		minValue = newMin;
 	}
 
 	public int top() {
@@ -36,7 +36,10 @@ class MyStack {
 	}
 
 	public int getMin() {
-		return minValue;
+		if(stack2.isEmpty()){
+			return Integer.MAX_VALUE;
+		}
+		return stack2.peek();
 	}
 }
 
