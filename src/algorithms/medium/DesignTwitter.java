@@ -65,6 +65,7 @@ class Twitter {
 	private Map<Integer, Set<Integer>> followsMap = new HashMap<>();
 	private Map<Integer, List<Tweet>> tweetMap = new HashMap<>();
 	private static int counter=0;
+	
 	public Twitter() {
 		followsMap = new HashMap<>();
 		tweetMap = new HashMap<>();
