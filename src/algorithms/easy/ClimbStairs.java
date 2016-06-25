@@ -10,7 +10,7 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
  *
  */
 public class ClimbStairs {
-    public int climbStairs(int n) {
+    public static int climbStairsIterative(int n) {
         if(n<=0){
             return 0;
         }
@@ -30,4 +30,19 @@ public class ClimbStairs {
         }
         return totalWays;
     }
+    private static int climbStairsRecursive(int i) {
+		if(i==1){
+			return 1;
+		}
+		if(i==2){
+			return 2;
+		}
+		
+		return climbStairsRecursive(i-1)+climbStairsRecursive(i-2);
+	}
+    
+    public static void main(String[] args) {
+		System.out.println(climbStairsRecursive(6));
+		System.out.println(climbStairsIterative(6));
+	}
 }

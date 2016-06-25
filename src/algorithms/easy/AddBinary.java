@@ -17,6 +17,7 @@ public class AddBinary {
 	public static void main(String args[]) {
 		System.out.println(addBinary("11", "1"));
 		//System.out.println(convertBinaryToInteger("101"));
+		
 	}
 
 	private static String addBinary(String a, String b) {
