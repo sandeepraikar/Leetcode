@@ -1,7 +1,5 @@
 package algorithms.easy;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Sandeep
