@@ -25,6 +25,7 @@ public class WordPattern {
         Map<Character,Integer> charMap = new HashMap<>();
         char[] patternArray = pattern.toCharArray();
         Arrays.sort(patternArray);
+        
         for (Character c : patternArray) {
 			charMap.put(c, charMap.getOrDefault(c, 0)+1);
 		}
