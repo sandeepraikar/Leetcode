@@ -16,7 +16,7 @@ public class PascalsTriangle {
 
 	public static List<List<Integer>> generate(int numRows) {
 		List<List<Integer>> triangle = new ArrayList<List<Integer>>();
-        if(numRows<=0){
+        if(numRows<=  0){
         	return triangle;
         }
         for(int i=0;i<numRows;i++){
