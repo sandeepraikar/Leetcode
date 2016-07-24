@@ -26,7 +26,6 @@ package algorithms.medium;
 public class CountNumbersWithUniqueDigits {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(countNumbersWithUniqueDigits(2));
 	}
 
