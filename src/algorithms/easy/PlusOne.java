@@ -5,11 +5,8 @@ import java.util.Arrays;
 public class PlusOne {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] result = plusOne(new int[]{9});
 		System.out.println(Arrays.toString(result));
-		
-		
 	}
 	
 	public static int[] plusOne(int[] digits){

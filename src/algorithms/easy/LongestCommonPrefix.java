@@ -10,24 +10,42 @@ package algorithms.easy;
 public class LongestCommonPrefix {
 
 	public static void main(String[] args) {
-		String[] arr={"abc","abcdd","abcdghhh","pqrggg","pqtsbbb","pqrsrgggs"};
-		String a="test";
-		String b="test2asdasd";
-		System.out.println(b.contains(a));
-		System.out.println(longestCommonPrefix(arr));
+		String[] arr = { "abc", "abcdd", "abcdghhh", "pqrggg", "pqtsbbb",
+				"pqrsrgggs" };
+		String a = "test";
+		String b = "test2asdasd";
+		// System.out.println(b.contains(a));
+		String result = longestCommonPrefix(arr);
+		System.out.println(result);
 	}
 
+	/*
+	 * public static String longestCommonPrefix(String[] strs) { int minLength =
+	 * strs.length+1; for (String word : strs) { if(minLength> word.length()){
+	 * minLength=word.length(); } } //for(int i=0) }
+	 */
+
 	public static String longestCommonPrefix(String[] strs) {
-		String commonPrefix=strs[0];
-		for(int i=1;i<strs.length;i++){
-			if(strs[i].contains(commonPrefix)){
-				System.out.println(commonPrefix.length()-1);
-				System.out.println(strs[i]);
-				commonPrefix=strs[i].substring(0,commonPrefix.length()-1);
-				System.out.println("-->"+commonPrefix);
+		if (strs == null || strs.length == 0)
+			return "";
+
+		if (strs.length == 1)
+			return strs[0];
+
+		String minString = strs[0];
+		for (String str : strs)
+			if (str.length() < minString.length())
+				minString = str;
+
+		System.out.println(minString);
+		// MODIFIED PART
+		for (String str : strs) {
+			for (int i = minString.length() - 1; i >= 0; i--) {
+				if (str.charAt(i) != minString.charAt(i))
+					minString = minString.substring(0, i);
 			}
 		}
-		System.out.println(commonPrefix);
-		return null;
+
+		return minString;
 	}
 }
