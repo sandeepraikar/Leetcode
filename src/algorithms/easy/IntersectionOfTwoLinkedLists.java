@@ -1,5 +1,8 @@
 package algorithms.easy;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class IntersectionOfTwoLinkedLists {
 	public class ListNode {
 		int val;
@@ -31,6 +34,24 @@ public class IntersectionOfTwoLinkedLists {
 		}
 		return currA;
 	}
+	
+	public ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
+        Set<Integer> temp = new HashSet<>();
+        if(headA==null || headB==null){
+            return null;
+        }
+        while(headA!=null){
+            temp.add(headA.val);
+            headA= headA.next;
+        }
+        while(headB!=null){
+            if(temp.contains(headB.val)){
+                return headB;
+            }
+            headB = headB.next;
+        }
+        return null;
+    }
 
 	public static void main(String[] args) {
 

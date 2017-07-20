@@ -1,31 +1,34 @@
 package algorithms.easy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 
 public class IsomorphicStrings {
 
 	public static void main(String args[]) {
 		System.out.println(isIsomorphic("paper", "title"));
+		System.out.println(isIsomorphic("paper", "xdger"));
 	}
 
-	public static boolean isIsomorphic(String s, String t) {
-		if(s.length()!=t.length()){
+	private static boolean isIsomorphic(String s1, String s2) {
+		Map<Character,Character> mapper = new HashMap<Character,Character>();
+		if(s1.length()!=s2.length()){
 			return false;
 		}
-		char sArray[] = s.toCharArray();
-		char tArray[] = t.toCharArray();
-		
-		int arrS[] = new int[256];
-		int arrT[] = new int[256];
-		int count=1;
-		int poS,poT;
-		for(int i=0;i<s.length();i++){
-			poS =  sArray[i];
-			poT =  tArray[i];
-			if(arrS[poS]!=arrT[poT]){
-				return false;
-			}else if(arrS[poS]==0){
-				poS=poT=count++;
+		for(int i=0;i<s1.length();i++){
+			char a = s1.charAt(i);
+			char b = s2.charAt(i);
+			if(mapper.containsKey(a)){
+				if(mapper.get(a)!=b){
+					return false;
+				}
+			}else{ 
+				if(mapper.containsValue(b)){
+					return false;
+				}
+				mapper.put(a,b);
 			}
 		}
 		return true;
