@@ -48,4 +48,36 @@ public class LongestCommonPrefix {
 
 		return minString;
 	}
+	
+	private static String longestCommonPrefix2(String[] str2) {
+		if(str2==null || str2.length==0){
+			return null;
+		}
+		int minLen = Integer.MAX_VALUE;
+		for(String x :  str2){
+			minLen = Math.min(minLen, x.length());
+		}
+		int low = 1;
+		int high = minLen;
+		System.out.println("high:"+high);
+		while(low<=high){
+			int mid = (low+high)/2;
+			System.out.println(mid);
+			if(isCommonPrefix(str2,mid)){
+				low = mid+1;
+			}else{
+				high = mid -1;
+			}
+		}
+		return str2[0].substring(0,(low+high)/2);
+	}
+
+	private static boolean isCommonPrefix(String[] str2, int len) {
+		String str = str2[0].substring(0,len);
+		for(String x : str2){
+			if(!x.startsWith(str))
+				return false;
+		}
+		return true;
+	}
 }
