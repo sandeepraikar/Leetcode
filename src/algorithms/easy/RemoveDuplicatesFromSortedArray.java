@@ -28,9 +28,9 @@ public class RemoveDuplicatesFromSortedArray {
 			}
 		}
 		for(int n: nums){
-			System.out.print(n+" ");
+			//System.out.print(n+" ");
 		}
-		return 0;
+		return ++j;
 	}
 
 }
