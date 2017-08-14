@@ -14,7 +14,7 @@ public class NumberOf1Bits {
 
 	public static void main(String[] args) {
 		System.out.println(hammingWeight(11));
-		System.out.println(hammingWeight2(11));
+		System.out.println(hammingWeight2(5));
 	}
 	
 	// Efficient approach

@@ -5,12 +5,30 @@ import java.util.Arrays;
 public class PlusOne {
 
 	public static void main(String[] args) {
-		int[] result = plusOne(new int[]{9});
+		int[] num ={9,1,1};
+		int[] result = plusOne(num);
 		System.out.println(Arrays.toString(result));
 	}
-	
+/*	public static int[] plusOne1(int[] digits) {
+        
+	    int n = digits.length;
+	    for(int i=n-1; i>=0; i--) {
+	        if(digits[i] < 9) {
+	            digits[i]++;
+	            return digits;
+	        }
+	        
+	        digits[i] = 0;
+	    }
+	    
+	    int[] newNumber = new int [n+1];
+	    newNumber[0] = 1;
+	    
+	    return newNumber;
+	}*/
 	public static int[] plusOne(int[] digits){
 		 for (int i = digits.length - 1; i >=0; i--) {
+			 System.out.println("i: "+i);
 		        if (digits[i] != 9) {
 		            digits[i]++;
 		            break;
@@ -25,6 +43,7 @@ public class PlusOne {
 		    }
 		    return digits;
 	}
+	
 	/*public static int[] plusOne(int[] digits) {
 		int[] result;
 		if(digits[0]<9){
