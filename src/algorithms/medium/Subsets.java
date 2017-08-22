@@ -22,6 +22,7 @@ public class Subsets {
 			int len = result.size();
 			for(int j=0;j<len;j++){
 				List<Integer> temp = new ArrayList<>(result.get(j));
+				
 				temp.add(nums[i]);
 				result.add(temp);
 			}
